@@ -8,140 +8,150 @@
   <!-- Google Font: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Main stylesheet -->
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
-
-  <meta name="description" content="Portfolio of Ahmad Beni Rusli — frontend developer.">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#home" class="logo" aria-label="Ahmad Beni Rusli — Home">Ahmad Beni Rusli</a>
+  <!-- Navbar (Fixed Top) -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#home" class="logo">ABR</a>
 
-      <nav class="nav" aria-label="Primary">
-        <!-- Hamburger button (visible on small screens) -->
-        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation">
-          <span class="hamburger" aria-hidden="true"></span>
-        </button>
-
-        <!-- nav-list: hidden on mobile by default; shown when .site-header.nav-open -->
-        <ul id="primary-menu" class="nav-list">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-        </ul>
+      <!-- Desktop nav -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
+
+      <!-- Mobile hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
+
+    <!-- Mobile overlay menu -->
+    <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#home" class="mobile-link">Home</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+    </nav>
   </header>
 
+  <!-- Hero Section (Full Screen) -->
   <main>
-    <!-- HERO -->
-    <section id="home" class="hero">
+    <section id="home" class="hero reveal-hero">
       <div class="container hero-inner">
-        <div class="hero-content">
-          <h1 class="hero-title reveal">Ahmad Beni Rusli</h1>
-          <p class="hero-subtitle reveal">Lorem ipsum dolor sit amet — crafting clean interfaces and delightful user experiences.</p>
-
-          <div class="hero-ctas reveal cta-group">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-ghost">Contact Me</a>
-          </div>
-        </div>
-
-        <div class="hero-visual" aria-hidden="true">
-          <div class="visual-card"><span class="dot"></span></div>
-        </div>
+        <p class="greeting">Hi, saya Ahmad — Frontend Developer</p>
+        <h1 class="headline">Ahmad Beni Rusli</h1>
+        <p class="subheadline">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac
+          leo nunc. Vestibulum et mauris vel ante finibus maximus nec ut leo.
+        </p>
+        <a href="#projects" class="btn cta">View Work</a>
       </div>
+      <!-- decorative circle -->
+      <div class="hero-decor" aria-hidden="true"></div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="about section">
+    <!-- About Section -->
+    <section id="about" class="section about reveal">
       <div class="container about-inner">
-        <div class="about-text scroll-reveal" data-sr-delay="80">
-          <h2>About Me</h2>
+        <div class="about-text">
+          <h2 class="section-title">About Me</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
-            Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+            posuere erat a ante venenatis dapibus posuere velit aliquet. Nunc
+            vel risus commodo viverra maecenas accumsan lacus vel facilisis.
           </p>
           <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-            Curabitur sodales ligula in libero.
+            Saya fokus membuat antarmuka yang bersih, aksesibel, dan
+            performa-oriented menggunakan HTML5, CSS3, dan Vanilla JavaScript.
           </p>
         </div>
-
-        <div class="about-media scroll-reveal" data-sr-delay="160" aria-hidden="true">
-          <div class="profile-placeholder" role="img" aria-label="Profile placeholder"></div>
+        <div class="about-photo">
+          <img src="https://cdn.ab-rust.xyz/file/1763562598376.png" alt="Foto Ahmad Beni Rusli profile">
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="skills section">
+    <!-- Skills Section -->
+    <section id="skills" class="section skills reveal">
       <div class="container">
-        <h2 class="section-title scroll-reveal" data-sr-delay="80">Skills</h2>
-
+        <h2 class="section-title">Skills</h2>
         <div class="skills-grid">
-          <div class="skill-card scroll-reveal" data-sr-delay="120">HTML</div>
-          <div class="skill-card scroll-reveal" data-sr-delay="140">CSS</div>
-          <div class="skill-card scroll-reveal" data-sr-delay="160">JavaScript</div>
-          <div class="skill-card scroll-reveal" data-sr-delay="180">Responsive Design</div>
-          <div class="skill-card scroll-reveal" data-sr-delay="200">Git</div>
-          <div class="skill-card scroll-reveal" data-sr-delay="220">UI/UX</div>
+          <span class="skill">HTML5</span>
+          <span class="skill">CSS3</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Responsive Design</span>
+          <span class="skill">UI/UX</span>
+          <span class="skill">Accessibility</span>
+          <span class="skill">Performance</span>
+          <span class="skill">Design Systems</span>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="projects section">
+    <!-- Projects Section -->
+    <section id="projects" class="section projects reveal">
       <div class="container">
-        <h2 class="section-title reveal">Projects</h2>
+        <h2 class="section-title">Projects</h2>
 
         <div class="projects-grid">
-          <article class="project-card scroll-reveal" data-sr-delay="120" aria-labelledby="p1-title">
-            <div class="project-image" role="img" aria-label="Project 1 image placeholder"></div>
-            <div class="project-body">
-              <h3 id="p1-title" class="project-title">Project Alpha</h3>
-              <p class="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
-              <div class="project-actions">
-                <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">View Code</a>
-                <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Live Demo</a>
+          <!-- Project Card 1 -->
+          <article class="project-card">
+            <img class="proj-thumb" src="https://cdn.ab-rust.xyz/file/1763562598376.png" alt="Project thumbnail">
+            <div class="proj-body">
+              <h3 class="proj-title">Project Alpha</h3>
+              <p class="proj-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <div class="proj-actions">
+                <a class="btn btn-outline" href="#" target="_blank" rel="noopener">Demo</a>
+                <a class="btn" href="#" target="_blank" rel="noopener">Code</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card scroll-reveal" data-sr-delay="160" aria-labelledby="p2-title">
-            <div class="project-image" role="img" aria-label="Project 2 image placeholder"></div>
-            <div class="project-body">
-              <h3 id="p2-title" class="project-title">Project Beta</h3>
-              <p class="project-desc">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-              <div class="project-actions">
-                <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">View Code</a>
-                <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Live Demo</a>
+          <!-- Project Card 2 -->
+          <article class="project-card">
+            <img class="proj-thumb" src="https://cdn.ab-rust.xyz/file/1763562598376.png" alt="Project thumbnail">
+            <div class="proj-body">
+              <h3 class="proj-title">Project Beta</h3>
+              <p class="proj-desc">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              <div class="proj-actions">
+                <a class="btn btn-outline" href="#" target="_blank" rel="noopener">Demo</a>
+                <a class="btn" href="#" target="_blank" rel="noopener">Code</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card scroll-reveal" data-sr-delay="200" aria-labelledby="p3-title">
-            <div class="project-image" role="img" aria-label="Project 3 image placeholder"></div>
-            <div class="project-body">
-              <h3 id="p3-title" class="project-title">Project Gamma</h3>
-              <p class="project-desc">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
-              <div class="project-actions">
-                <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">View Code</a>
-                <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Live Demo</a>
+          <!-- Project Card 3 -->
+          <article class="project-card">
+            <img class="proj-thumb" src="https://cdn.ab-rust.xyz/file/1763562598376.png" alt="Project thumbnail">
+            <div class="proj-body">
+              <h3 class="proj-title">Project Gamma</h3>
+              <p class="proj-desc">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+              <div class="proj-actions">
+                <a class="btn btn-outline" href="#" target="_blank" rel="noopener">Demo</a>
+                <a class="btn" href="#" target="_blank" rel="noopener">Code</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card scroll-reveal" data-sr-delay="240" aria-labelledby="p4-title">
-            <div class="project-image" role="img" aria-label="Project 4 image placeholder"></div>
-            <div class="project-body">
-              <h3 id="p4-title" class="project-title">Project Delta</h3>
-              <p class="project-desc">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-              <div class="project-actions">
-                <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">View Code</a>
-                <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Live Demo</a>
+          <!-- Project Card 4 -->
+          <article class="project-card">
+            <img class="proj-thumb" src="https://cdn.ab-rust.xyz/file/1763562598376.png" alt="Project thumbnail">
+            <div class="proj-body">
+              <h3 class="proj-title">Project Delta</h3>
+              <p class="proj-desc">Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
+              <div class="proj-actions">
+                <a class="btn btn-outline" href="#" target="_blank" rel="noopener">Demo</a>
+                <a class="btn" href="#" target="_blank" rel="noopener">Code</a>
               </div>
             </div>
           </article>
@@ -149,38 +159,33 @@
       </div>
     </section>
 
-    <!-- CONTACT placeholder -->
-    <section id="contact" class="section-placeholder">
-      <div class="container"><h2>Contact</h2><p>Placeholder section for future content.</p></div>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact reveal">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p>Ingin bekerja sama atau hanya ingin menyapa? Kirim email ke: <a href="mailto:ahmad@example.com">ahmad@example.com</a></p>
+      </div>
     </section>
   </main>
 
-  <!-- FOOTER (baru) -->
-  <footer class="site-footer" role="contentinfo">
+  <!-- Footer -->
+  <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="copyright">© 2024 Ahmad Beni Rusli. All rights reserved.</p>
-
-      <div class="socials" aria-label="Social links">
-        <!-- Simple inline SVG icons (dummy links) -->
-        <a href="#" class="social-link" aria-label="GitHub (dummy)" title="GitHub" rel="noopener" target="_blank">
-          <!-- GitHub icon (simple) -->
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C6.477 2 2 6.486 2 12.02c0 4.432 2.865 8.193 6.839 9.52.5.092.682-.217.682-.483 0-.237-.009-.866-.014-1.699-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.607.069-.607 1.004.071 1.532 1.034 1.532 1.034.892 1.53 2.341 1.088 2.91.832.091-.647.349-1.088.635-1.338-2.22-.253-4.555-1.112-4.555-4.946 0-1.091.39-1.983 1.03-2.682-.103-.254-.446-1.274.098-2.656 0 0 .84-.269 2.75 1.026A9.56 9.56 0 0112 6.844c.85.004 1.705.115 2.504.338 1.909-1.295 2.748-1.026 2.748-1.026.546 1.382.203 2.402.1 2.656.64.699 1.028 1.591 1.028 2.682 0 3.842-2.338 4.69-4.566 4.938.359.31.679.923.679 1.861 0 1.344-.012 2.427-.012 2.756 0 .268.18.579.688.481A10.02 10.02 0 0022 12.02C22 6.486 17.523 2 12 2z" fill="currentColor"/></svg>
+      <p>© 2024 Ahmad Beni Rusli</p>
+      <div class="socials">
+        <!-- Simple SVG icons -->
+        <a href="#" aria-label="GitHub" class="social">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 .5C5.73.5.96 5.27.96 11.54c0 4.67 3.02 8.63 7.22 10.04.53.1.72-.23.72-.51 0-.25-.01-.9-.01-1.76-2.94.64-3.56-1.42-3.56-1.42-.48-1.23-1.17-1.56-1.17-1.56-.96-.66.07-.65.07-.65 1.06.08 1.62 1.09 1.62 1.09.94 1.61 2.47 1.15 3.07.88.09-.69.37-1.15.67-1.41-2.35-.27-4.82-1.18-4.82-5.25 0-1.16.41-2.11 1.08-2.86-.11-.27-.47-1.35.1-2.82 0 0 .88-.28 2.88 1.08A9.91 9.91 0 0112 6.84c.89.004 1.79.12 2.62.35 2-.36 2.88-1.08 2.88-1.08.57 1.47.21 2.55.11 2.82.67.75 1.08 1.7 1.08 2.86 0 4.08-2.48 4.98-4.84 5.24.38.33.72.98.72 1.98 0 1.43-.01 2.58-.01 2.93 0 .28.19.62.73.51 4.2-1.42 7.22-5.38 7.22-10.04C23.04 5.27 18.27.5 12 .5z" fill="currentColor"/>
+          </svg>
         </a>
-
-        <a href="#" class="social-link" aria-label="LinkedIn (dummy)" title="LinkedIn" rel="noopener" target="_blank">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6 1.11 6 0 4.88 0 3.5 0 2.12 1.11 1 2.49 1 3.87 1 4.98 2.12 4.98 3.5zM.34 24h4.3V7.98H.34V24zM8.53 7.98V24h4.3v-8.7c0-2.16.78-3.63 2.73-3.63 1.5 0 2.39 1.02 2.39 3.63V24h4.3v-9.42c0-5.04-2.69-7.38-6.27-7.38-2.9 0-4.18 1.6-4.9 2.73h.07V7.98z" fill="currentColor"/></svg>
-        </a>
-
-        <a href="#" class="social-link" aria-label="Instagram (dummy)" title="Instagram" rel="noopener" target="_blank">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.2A4.8 4.8 0 1016.8 13 4.8 4.8 0 0012 8.2zM18.5 6.2a1.1 1.1 0 11-1.1-1.1 1.1 1.1 0 011.1 1.1z" fill="currentColor"/></svg>
-        </a>
+        <a href="#" aria-label="LinkedIn" class="social">in</a>
+        <a href="#" aria-label="Twitter" class="social">tw</a>
       </div>
     </div>
   </footer>
 
-  <!-- Mobile nav overlay (created via JS too) -->
-  <div class="nav-overlay" aria-hidden="true"></div>
-
+  <!-- Script -->
   <script src="script.js"></script>
 </body>
 </html>
