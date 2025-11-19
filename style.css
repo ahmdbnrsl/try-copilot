@@ -1,0 +1,187 @@
+/* style.css (finalized)
+   - Adds footer styling, mobile nav layout/overlay, and smooth scrolling
+   - Keep earlier sections (hero, about, skills, projects) above this block in the same file.
+*/
+
+/* -------------------------
+   Design tokens (add zinc-950)
+   ------------------------- */
+:root{
+  --zinc-950: #05060a; /* darkest footer background */
+  --zinc-900: #0b1220;
+  --zinc-800: #0f1724;
+  --zinc-700: #111827;
+  --zinc-500: #6b7280;
+  --zinc-400: #9ca3af;
+  --zinc-50:  #f8fafc;
+
+  --max-width: 1100px;
+  --container-padding: 1.25rem;
+  --radius-lg: 12px;
+  --shadow-soft: 0 8px 30px rgba(2,6,23,0.6);
+  --transition-fast: 180ms cubic-bezier(.2,.9,.2,1);
+  --transition-smooth: 320ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* Smooth native scrolling for browsers that support it */
+html { scroll-behavior: smooth; }
+
+/* (Existing reset, typography, header, hero, about, skills, projects styles should still exist above) */
+
+/* -------------------------
+   Mobile Nav styles & overlay
+   ------------------------- */
+/* Make hamburger visible on small screens */
+.nav-toggle {
+  display: none; /* default (desktop) - show via media query below */
+}
+
+/* Mobile-specific nav behavior */
+@media (max-width: 860px) {
+  /* show hamburger */
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 0;
+    padding: 0.35rem;
+    margin-left: 0.5rem;
+    color: var(--zinc-50);
+    cursor: pointer;
+  }
+
+  /* nav-list hidden by default (mobile) */
+  .nav-list {
+    position: absolute;
+    right: var(--container-padding);
+    top: 64px;
+    background: linear-gradient(180deg, rgba(15,23,36,0.98), rgba(11,18,32,0.98));
+    border-radius: 12px;
+    padding: 0.75rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 180px;
+    box-shadow: 0 20px 40px rgba(2,6,23,0.6);
+    transform-origin: top right;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px) scale(.98);
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    z-index: 60;
+  }
+
+  /* when nav is open, reveal nav-list */
+  .site-header.nav-open .nav-list {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  /* overlay (darken page behind menu) */
+  .nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(2,6,23,0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms ease;
+    z-index: 50;
+    display: none; /* default hidden on desktop */
+  }
+
+  /* show overlay when nav open */
+  .site-header.nav-open ~ .nav-overlay,
+  .nav-overlay.active {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Improve hamburger animation look */
+.hamburger {
+  width: 22px;
+  height: 2px;
+  background: var(--zinc-50);
+  display: inline-block;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--zinc-50);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+.hamburger::before { top: -7px; }
+.hamburger::after { bottom: -7px; }
+
+/* when header has nav-open, transform hamburger to X */
+.site-header.nav-open .hamburger {
+  background: transparent;
+}
+.site-header.nav-open .hamburger::before {
+  transform: translateY(7px) rotate(45deg);
+}
+.site-header.nav-open .hamburger::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* -------------------------
+   Footer styles
+   ------------------------- */
+.site-footer {
+  background: var(--zinc-950);
+  color: var(--zinc-400);
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(255,255,255,0.02);
+}
+
+.footer-inner {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* copyright text */
+.site-footer .copyright {
+  margin: 0;
+  color: var(--zinc-500);
+  font-size: 0.95rem;
+}
+
+/* socials */
+.site-footer .socials {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+.site-footer .social-link {
+  color: var(--zinc-400);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border-radius: 8px;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+.site-footer .social-link:hover,
+.site-footer .social-link:focus {
+  color: var(--zinc-50);
+  transform: translateY(-3px);
+  outline: none;
+}
+
+/* Ensure footer layout is compact on small screens */
+@media (min-width: 720px) {
+  .footer-inner { flex-direction: row; justify-content: space-between; }
+  .site-footer .socials { margin-top: 0; }
+}
